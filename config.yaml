@@ -1,0 +1,43 @@
+# orderflow-alpha configuration
+# ================================
+
+strategy:
+  kelly_fraction: 0.35
+  max_position_pct: 0.12
+  max_portfolio_exposure: 0.55
+  min_edge_threshold: 0.05
+  rebalance_interval_seconds: 300
+
+signals:
+  orderflow_weight: 0.30
+  ai_prob_weight: 0.40
+  momentum_weight: 0.30
+  lookback_minutes: 60
+  smoothing_window: 5
+
+risk:
+  stop_loss_pct: 0.35
+  max_drawdown_pct: 0.25
+  max_correlated_exposure: 0.30
+  cooldown_after_stop_seconds: 1800
+
+backtest:
+  initial_bankroll: 10000
+  fee_rate: 0.002
+  slippage_bps: 10
+  start_date: "2024-01-01"
+  end_date: "2025-12-31"
+
+data:
+  polymarket_api_url: "https://clob.polymarket.com"
+  polygon_rpc_url: "https://polygon-rpc.com"
+  cache_dir: "./data/cache"
+  refresh_interval_seconds: 30
+
+dashboard:
+  port: 8050
+  refresh_ms: 5000
+
+logging:
+  level: "INFO"
+  file: "logs/orderflow.log"

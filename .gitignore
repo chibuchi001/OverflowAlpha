@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+.env
+data/cache/
+logs/
+backtest_results.json
+*.egg
+.venv/
+venv/
+node_modules/
